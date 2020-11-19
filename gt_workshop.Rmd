@@ -3,6 +3,8 @@ title: '{gt} package workshop'
 author: "Juliette Verstaen"
 date: "Novemeber 18, 2020"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 # About: 
@@ -18,18 +20,20 @@ Any questions, comments, or concerns please feel free to contact me at verstaen@
 knitr::opts_chunk$set(echo = TRUE)
  
 ## libraries
-
+library(tidyverse) 
+library(here)
+library(gt)
 
 ## read in the wrangled data 
- 
+thanksgiving_pie <- read_csv(here("data/thanksgiving_pie.csv"))
 
 ```
 
 
 ## Step 1: Turn the df into a table with just one line!
 ```{r basic table}
-
-
+thanksgiving_pie %>% 
+  gt() 
 
 ```
 
@@ -39,6 +43,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## add a title and subtitle  
 thanksgiving_pie %>% 
   gt() %>% 
+  tab_header(title = "What pies do we eat at Thanksgiving?",
+             subtitle = "may the slice be with you")
 
   
 

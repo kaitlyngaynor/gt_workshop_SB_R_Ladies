@@ -3,6 +3,8 @@ title: '{gt} package workshop'
 author: "Juliette Verstaen"
 date: "Novemeber 18, 2020"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 # About: 
